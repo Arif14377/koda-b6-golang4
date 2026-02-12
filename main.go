@@ -7,6 +7,11 @@ import (
 )
 
 func main() {
+	defer func() {
+		fmt.Println(recover())
+		os.Exit(0)
+	}()
+
 	pilihan := []string{"Fahrenheit", "Reamur", "Kelvin"}
 	var targetPilihan int
 
@@ -17,8 +22,7 @@ func main() {
 	fmt.Scanf("%d", &targetPilihan)
 	target, err := lib.PilihanTarget(targetPilihan)
 	if err != nil {
-		fmt.Println(err)
-		os.Exit(0)
+		panic(err)
 	}
 	suhuAkhir := lib.Conversion(target)
 	fmt.Printf("Hasil konversi suhu: %f\n", suhuAkhir)
