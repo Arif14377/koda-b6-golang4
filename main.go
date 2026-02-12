@@ -9,7 +9,7 @@ import (
 func main() {
 	defer func() {
 		fmt.Println(recover())
-		os.Exit(0)
+		os.Exit(1)
 	}()
 
 	pilihan := []string{"Fahrenheit", "Reamur", "Kelvin"}
@@ -26,4 +26,5 @@ func main() {
 	}
 	suhuAkhir := lib.Conversion(target)
 	fmt.Printf("Hasil konversi suhu: %f\n", suhuAkhir)
+	os.Exit(0)
 }
