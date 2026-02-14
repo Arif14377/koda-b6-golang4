@@ -17,7 +17,6 @@ func Conversion(target int) float64 {
 	var suhuCelcius float64
 	var suhuAkhir float64
 
-	fmt.Println("# KONVERSI SUHU CELCIUS")
 	fmt.Printf("%s", "Masukkan suhu: ")
 	fmt.Scanf("%f", &suhuCelcius)
 
